@@ -51,5 +51,6 @@ ANSWERS = OrderedDict([
     ('.*{bot}.*(insulta|offendi).*', '{insult}'),
     ('(?=.*{bot}.*)(?=.*(developers|ballmer).*)(?=.*remix.*)', 'LOL https://www.youtube.com/watch?v=KMU0tzLwhbE'),
     ('(?=.*{bot}.*)(?=.*(developers|ballmer).*)', 'Buon gustaio: https://www.youtube.com/watch?v=Vhh_GeBPOhs'),
+    ('(?=.*{bot}.*)(?=.*(casa tua|vivi|abiti).*)', '{username}, puoi trovarmi qui: https://github.com/OpenCode/odoo-italia-bot-irc'),
     ('.*{bot}.*', '{username} smettila di menzionarmi. Sono solo un BOT. Pensa a lavorare!'),
     ])
