@@ -45,6 +45,7 @@ ANSWERS = OrderedDict([
     ('.*ha abbandonato.*', 'Finalmente {username} va via. Più spazio per chi rimane.'),
     ('.*ciao|buonasera|buongiorno|salve.*', 'Ciao {username}!'),
     ('(?=.*(manual[ei]|guid[ae]|documentazione|doc|materiale|tutorial).*)(?=.*(odoo|openerp).*)', '{username}, forse questo link può aiutarti: https://www.odoo.com/documentation/8.0/'),
+    ('(?=.*{bot}.*)(?=.*quanto manca .*)', 'Direi, più o meno, http://c1.staticflickr.com/9/8659/16040425942_b3130612a8_c.jpg'),
     ('(?=.*{bot}.*)(?=.*grazie.*)', 'Prego {username}! È stato un piacere per me! Cosa ne dici di una donazione per aiutarmi?'),
     ('(?=.*{bot}.*)(?=.*scusa.*)', 'Figurati {username}! Di niente!'),
     ('.*{bot}.*(insulta|offendi) OpenCode', 'Voglio troppo bene a mio padre! Grazie per avermi creato papà <3!'),
