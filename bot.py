@@ -27,11 +27,14 @@
 # -------
 # IMPORTS
 # -------
-import botlib
 import re
-from insult import INSULTS
-from answer import ANSWERS
 from random import randint
+from datetime import datetime
+
+import lib.botlib as botlib
+from sentence.insult import INSULTS
+from sentence.answer import ANSWERS
+
 
 
 BOT_NAME = 'Ticelli'
@@ -45,6 +48,12 @@ class OdooItaliaBotIRC(botlib.Bot):
 
     def __actions__(self):
         botlib.Bot.__actions__(self)
+        # ----- Update log file
+        today = datetime.today()
+        with open('logs/%s' % (today.strftime('%Y_%m_%d')),
+                  'ab') as log_file:
+            log_file.write('[%s] %s' % (today.strftime('%H:%M:%S'),
+                                        self.data))
         # ----- Get the senders username
         username = self.get_username()
         # ----- With this if we eclude standard channel messages
