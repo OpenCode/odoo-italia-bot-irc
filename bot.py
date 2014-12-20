@@ -27,6 +27,7 @@
 # -------
 # IMPORTS
 # -------
+from os import path
 import re
 from random import randint
 from datetime import datetime
@@ -36,8 +37,11 @@ from sentence.insult import INSULTS
 from sentence.answer import ANSWERS
 
 
-
+# ---------
+# CONSTANTS
+# ---------
 BOT_NAME = 'Ticelli'
+PROJECT_PATH = path.dirname(path.realpath(__file__))
 
 
 # ----- Create a new class for our bot extending the Bot class from botlib
@@ -49,11 +53,10 @@ class OdooItaliaBotIRC(botlib.Bot):
     def __actions__(self):
         botlib.Bot.__actions__(self)
         # ----- Update log file
-        today = datetime.today()
-        with open('logs/%s' % (today.strftime('%Y_%m_%d')),
+        with open('%s/logs/%s' % (PROJECT_PATH,
+                                  datetime.today().strftime('%Y_%m_%d')),
                   'ab') as log_file:
-            log_file.write('[%s] %s' % (today.strftime('%H:%M:%S'),
-                                        self.data))
+            log_file.write(self.data)
         # ----- Get the senders username
         username = self.get_username()
         # ----- With this if we eclude standard channel messages
